@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "c588b259-5bd8-4d58-8232-51360d7c8c65",
+		"name": "Back Your Company",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Activity",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activityTitle\" : \"Auditoria\",\r\n    \"activitySubtitle\" : \"Limpar conta\",\r\n    \"sla\" : 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/activity",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all activities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/activity",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
