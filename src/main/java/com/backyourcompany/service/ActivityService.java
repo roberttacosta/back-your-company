@@ -1,4 +1,4 @@
-package com.backyourcompany;
+package com.backyourcompany.service;
 
 import com.backyourcompany.dto.ActivityRequest;
 import com.backyourcompany.entities.Activity;
@@ -9,4 +9,6 @@ public interface ActivityService {
 
     Activity createActivity(ActivityRequest activityRequest);
     List<Activity> getAllActivities();
+    Activity findByTitleActivity(String titleActivity);
+    Activity findById(Long activityId);
 }

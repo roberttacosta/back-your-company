@@ -1,16 +1,16 @@
-package com.backyourcompany.impl;
+package com.backyourcompany.service.impl;
 
-import com.backyourcompany.ActivityService;
 import com.backyourcompany.dto.ActivityRequest;
 import com.backyourcompany.entities.Activity;
+import com.backyourcompany.entities.Visit;
+import com.backyourcompany.exceptions.ObjectNotFoundException;
 import com.backyourcompany.repositories.ActivityRepository;
-import lombok.extern.slf4j.Slf4j;
+import com.backyourcompany.service.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Slf4j
 @Service
 public class ActivityServiceImpl implements ActivityService {
 
@@ -29,6 +29,18 @@ public class ActivityServiceImpl implements ActivityService {
     @Override
     public List<Activity> getAllActivities(){
         return activityRepository.findAll();
+    }
+
+    @Override
+    public Activity findByTitleActivity(String titleActivity) {
+        return activityRepository.findByActivityTitle(titleActivity)
+                .orElseThrow(() -> new ObjectNotFoundException("The activity: " + titleActivity + " not exists."));
+    }
+
+    @Override
+    public Activity findById(Long activityId) {
+        return activityRepository.findById(activityId)
+                .orElseThrow(() -> new ObjectNotFoundException("The activity: " + activityId + " not exists."));
     }
 
 }

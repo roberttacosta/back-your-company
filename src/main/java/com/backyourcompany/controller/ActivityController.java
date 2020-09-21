@@ -2,7 +2,7 @@ package com.backyourcompany.controller;
 
 import com.backyourcompany.dto.ActivityRequest;
 import com.backyourcompany.entities.Activity;
-import com.backyourcompany.ActivityService;
+import com.backyourcompany.service.ActivityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,7 +31,7 @@ public class ActivityController {
     }
 
     @GetMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public List<Activity> getAllActivities() {
         log.info("Show all activities");
         return activityService.getAllActivities();
