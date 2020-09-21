@@ -2,8 +2,8 @@ package com.backyourcompany.service;
 
 import com.backyourcompany.dto.ActivityRequest;
 import com.backyourcompany.entities.Activity;
-import com.backyourcompany.impl.ActivityServiceImpl;
 import com.backyourcompany.repositories.ActivityRepository;
+import com.backyourcompany.service.impl.ActivityServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
